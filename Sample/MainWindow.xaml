@@ -1,0 +1,40 @@
+﻿<Window x:Class="Clipping.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" MinWidth="525" MinHeight="150" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        
+        <Canvas Grid.Row="0" Margin="0,30,0,0" Background="White" 
+                MouseLeftButtonDown="Grid_MouseLeftButtonDown"  x:Name="mainContainer">
+            
+        </Canvas>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Mode:" Grid.Column="0" FontSize="14"
+                         VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,2"/>
+            <RadioButton x:Name="PolygonRadioBtn" Content="Polygon" Grid.Column="1" FontSize="14"
+                         VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" IsChecked="True" Checked="PolygonRadioBtn_Checked"/>
+            <RadioButton x:Name="LineRadioBtn" Content="Line" Grid.Column="2" FontSize="14"
+                         VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Checked="LineRadioBtn_Checked"/>
+            
+            <Button x:Name="joinBtn" Content="Join" Grid.Column="4" Margin="5,8,5,8" FontSize="13" Click="joinBtn_Click"/>
+            <Button x:Name="clipBtn" Content="Clip" Grid.Column="5" Margin="5,8,5,8" FontSize="13" Click="clipBtn_Click"/>
+            <Button x:Name="clearBtn" Content="Clear" Grid.Column="6" Margin="5,8,5,8" FontSize="13" Click="clearBtn_Click"/>
+        </Grid>
+        
+        
+    </Grid>
+</Window>
